@@ -27,3 +27,10 @@ A web application to host our streaming overlays and schedule
 -   [ ] dashboard page for streamer
     -   [ ] list of bits/superchats spent and who sent them
     -   [ ] list of subscribers
+-   [ ] landing page
+    -   [ ] List of streamers (ordered by who is online)
+    -   [ ] link to their schedule pages
+-   [ ] 404 page
+
+https://www.streaming-schedule.com - landing page that has a signup / login link
+https://www.streaming-schedule.com/brookzerker
