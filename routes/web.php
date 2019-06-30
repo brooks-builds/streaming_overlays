@@ -16,6 +16,7 @@ Route::get('/', function () {
 });
 
 Route::get('/{streamerName}', 'StreamerController@index');
+Route::get('/api/streamers', 'StreamerController@getStreamerNames');
 
 Auth::routes();
 

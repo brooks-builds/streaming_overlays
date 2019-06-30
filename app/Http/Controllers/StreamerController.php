@@ -18,4 +18,8 @@ class StreamerController extends Controller
         }
 
     }
+
+    public function getStreamerNames() {
+        return User::all()->take(10)->pluck('name');
+    }
 }

@@ -7,7 +7,10 @@
     <title>Welcome to the Streaming page!</title>
 </head>
 <body>
-    <h1>Hi there, this is our streaming page.</h1>
-    <p>Welcome</p>
+    <div id="app">
+        <hello-component></hello-component>
+        <router-view></router-view>
+    </div>
+    <script src="/js/app.js"></script>
 </body>
 </html>
