@@ -11,13 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('landing');
-});
 
-Route::get('/{streamerName}', 'StreamerController@index');
 Route::get('/api/streamers', 'StreamerController@getStreamerNames');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::fallback(function () {
+    return view('landing');
+});

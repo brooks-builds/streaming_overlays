@@ -1,13 +1,17 @@
 import Vue from "vue";
 import LandingComponent from "./components/LandingComponent.vue";
 import ScheduleComponent from "./components/ScheduleComponent.vue";
+import StandardScheduleComponent from "./components/StandardScheduleComponent.vue";
 import VueRouter from "vue-router";
 
 Vue.use(VueRouter);
 
 // https://router.vuejs.org/guide/#javascript
 
-const routes = [{ path: "/:streamer", component: ScheduleComponent }];
+const routes = [
+    { path: "/", component: LandingComponent },
+    { path: "/:streamer", component: ScheduleComponent }
+];
 
 // https://router.vuejs.org/guide/essentials/history-mode.html
 const router = new VueRouter({
@@ -16,6 +20,7 @@ const router = new VueRouter({
 });
 
 Vue.component("hello-component", LandingComponent);
+Vue.component("standard-schedule", StandardScheduleComponent);
 
 const app = new Vue({
     el: "#app",

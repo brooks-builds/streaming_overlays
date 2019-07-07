@@ -8,7 +8,6 @@
 </head>
 <body>
     <div id="app">
-        <hello-component></hello-component>
         <router-view></router-view>
     </div>
     <script src="/js/app.js"></script>
