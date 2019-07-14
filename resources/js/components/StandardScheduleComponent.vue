@@ -1,53 +1,102 @@
 <template>
-  <div>
-    <section>
-      <h1>Hello there</h1>
-      <h2>Standard Schedule Component</h2>
-    </section>
-    <h1>Schedule</h1>
+  <main>
+    <div class="container">
+      <h1>{{ title }}</h1>
 
-    <article>
-      <h2>Programming Before Work</h2>
-      <!-- "title" links to streaming page -->
-      <p>
-        Watch on
-        <a href="#">Twitch.tv</a>
-      </p>
-      <p>
-        Watch old streams at
-        <a href="#">YouTube.com</a>
-      </p>
-      <p>Description about what I'm building</p>
-      <!-- "description" -->
-      <ul>
-        <li>Monday: 6:45am MDT - 8:15am MDT</li>
-        <!-- day, startTime, endTime, cancelled, cancelMessage -->
-        <li>Wednesday: 6:45am MDT - 8:15am MDT</li>
-        <li>Friday: 6:45am MDT - 8:15am MDT</li>
-      </ul>
-    </article>
+      <article v-for="event in events" v-bind:key="event.id">
+        <h2 class="title">{{ event.title }}</h2>
+        <ul class="link-wrapper">
+          <li v-for="link in event.links" v-bind:key="link.id">
+            <a v-bind:href="link.to">{{ link.text }}</a>
+          </li>
+        </ul>
+        <p class="description">{{ event.description }}</p>
+        <ul>
+          <li v-for="(dateTime, index) in event.streamTimes" v-bind:key="index">{{ dateTime }}</li>
+        </ul>
+      </article>
 
-    <article>
-      <h2>Gaming After Work</h2>
-      <p>Description about what I'm playing</p>
-      <ul>
-        <li>
-          <strike>Tuesday:</strike>cancelled as I'm out of town this Tuesday
-        </li>
-        <li>Thursday: 6:45pm MDT - 8:15pm MDT</li>
-      </ul>
-    </article>
-
-    <section>
-      <h1>Links</h1>
-      <ul>
-        <li>
-          <a href="#">Twitter</a>
-        </li>
-      </ul>
-    </section>
-  </div>
+      <section>
+        <h1>{{ linksTitle }}</h1>
+        <ul>
+          <li v-for="link in links" v-bind:key="link.id">
+            <a v-bind:href="link.to">{{ link.text }}</a>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </main>
 </template>
 
 <script>
+export default {
+  data: () => ({
+    title: "Streamer Schedule",
+    linksTitle: "Links",
+    links: [
+      {
+        id: 1,
+        text: "My Twitter",
+        to: "#"
+      }
+    ],
+    events: [
+      {
+        id: 0,
+        title: "Title 1",
+        links: [
+          {
+            id: 1,
+            text: "Watch me on Twitch!",
+            to: "#"
+          }
+        ],
+        description: "This is my description",
+        streamTimes: ["Monday", "Wednesday", "Friday"]
+      }
+    ]
+  })
+};
 </script>
+
+<style scoped>
+main {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+}
+
+.container {
+  grid-column: 2 / 3;
+}
+
+article {
+  margin: 10px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "titl  titl"
+    "desc  link"
+    "sched sched";
+}
+
+.title {
+  grid-area: titl;
+  font: 1.5em sans-serif;
+}
+
+.link-wrapper {
+  grid-area: link;
+}
+
+.description {
+  grid-area: desc;
+}
+
+.schedule {
+  grid-area: sched;
+}
+
+h1 {
+  font: 2em sans-serif;
+}
+</style>
