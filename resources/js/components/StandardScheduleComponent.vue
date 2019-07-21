@@ -11,9 +11,12 @@
           </li>
         </ul>
         <p class="description">{{ event.description }}</p>
-        <ul>
-          <li v-for="(dateTime, index) in event.streamTimes" v-bind:key="index">{{ dateTime }}</li>
-        </ul>
+        <div class="schedule">
+          <p>Times displayed in MDT</p>
+          <ul>
+            <li v-for="(dateTime, index) in event.streamTimes" v-bind:key="index">{{ dateTime }}</li>
+          </ul>
+        </div>
       </article>
 
       <section>
@@ -49,10 +52,19 @@ export default {
             id: 1,
             text: "Watch me on Twitch!",
             to: "#"
+          },
+          {
+            id: 2,
+            text: "See the archives!",
+            to: "#"
           }
         ],
         description: "This is my description",
-        streamTimes: ["Monday", "Wednesday", "Friday"]
+        streamTimes: [
+          "Monday @ 8:00 am - 9:00 am",
+          "Wednesday @ 8:00 am - 10:00 am",
+          "Friday @ 8:00 am - 11:00 am"
+        ]
       }
     ]
   })
