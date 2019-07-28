@@ -2,6 +2,8 @@ import Vue from "vue";
 import LandingComponent from "./components/LandingComponent.vue";
 import ScheduleComponent from "./components/ScheduleComponent.vue";
 import StandardScheduleComponent from "./components/StandardScheduleComponent.vue";
+import NavComponent from "./components/NavComponent.vue";
+import LoginComponent from "./components/LoginComponent.vue";
 import VueRouter from "vue-router";
 
 Vue.use(VueRouter);
@@ -10,6 +12,7 @@ Vue.use(VueRouter);
 
 const routes = [
     { path: "/", component: LandingComponent },
+    { path: "/accounts/login", component: LoginComponent },
     { path: "/:streamer", component: ScheduleComponent }
 ];
 
@@ -21,6 +24,7 @@ const router = new VueRouter({
 
 Vue.component("hello-component", LandingComponent);
 Vue.component("standard-schedule", StandardScheduleComponent);
+Vue.component("top-nav", NavComponent);
 
 const app = new Vue({
     el: "#app",

@@ -3,6 +3,8 @@
    License: none (public domain)
 */
 
+@import url("https://fonts.googleapis.com/css?family=Montserrat|Quicksand&display=swap");
+
 html,
 body,
 div,
@@ -87,8 +89,9 @@ video {
     margin: 0;
     padding: 0;
     border: 0;
-    font-size: 100%;
     font: inherit;
+    font-size: 20px;
+    font-family: "Quicksand", sans-serif;
     vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -126,4 +129,24 @@ q:after {
 table {
     border-collapse: collapse;
     border-spacing: 0;
+}
+h1 {
+    font-size: 24px;
+}
+a {
+    font-size: 18px;
+    text-decoration: none;
+    color: darkblue;
+}
+input,
+button {
+    border-radius: 5px;
+    font-size: 20px;
+}
+input {
+    border: 1px solid black;
+}
+button {
+    font-family: "Quicksand", sans-serif;
+    border: none;
 }

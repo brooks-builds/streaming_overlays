@@ -9,6 +9,7 @@
 </head>
 <body>
     <div id="app">
+        <top-nav></top-nav>
         <router-view></router-view>
     </div>
     <script src="/js/app.js"></script>
