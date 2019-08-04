@@ -4,6 +4,7 @@ import ScheduleComponent from "./components/ScheduleComponent.vue";
 import StandardScheduleComponent from "./components/StandardScheduleComponent.vue";
 import NavComponent from "./components/NavComponent.vue";
 import LoginComponent from "./components/LoginComponent.vue";
+import CreateAccountComponent from "./components/CreateAccountComponent.vue";
 import VueRouter from "vue-router";
 
 Vue.use(VueRouter);
@@ -13,6 +14,7 @@ Vue.use(VueRouter);
 const routes = [
     { path: "/", component: LandingComponent },
     { path: "/accounts/login", component: LoginComponent },
+    { path: "/accounts/create", component: CreateAccountComponent },
     { path: "/:streamer", component: ScheduleComponent }
 ];
 

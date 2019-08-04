@@ -13,6 +13,7 @@
 
 
 Route::get('/api/streamers', 'StreamerController@getStreamerNames');
+// Route::post('/api/accounts', 'RegisterController@register');
 
 Auth::routes();
 
